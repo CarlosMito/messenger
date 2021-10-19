@@ -14,7 +14,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        const socket = io("http://localhost:3000", { transports: ['websocket'] });
+        const socket = io("http://localhost:3000");
         socket.on("new_message", (data) => console.log(data));
     </script>
 </body>
