@@ -2,8 +2,8 @@ import "dotenv/config";
 import express from 'express';
 import http from 'http';
 import cors from 'cors';
-import { Server } from 'socket.io';
 
+import { Server } from 'socket.io';
 import { router } from "./routes";
 
 const app = express();
@@ -33,9 +33,7 @@ app.get('/github', (req, res) => {
 
 app.get('/signin/callback', (req, res) => {
     const { code } = req.query;
-
     return res.json(code);
 });
 
-const PORT = 3000;
-serverHttp.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+export { serverHttp, io };
